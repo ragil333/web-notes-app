@@ -15,7 +15,8 @@ return new class extends Migration
             $table->uuid("id")->primary();
             $table->string("judul_notes");
             $table->longText("isi_notes");
-            $table->uuid("id_user")->referenses("users")->on("id");
+            $table->uuid('id_user');
+            $table->foreign('id_user')->on('users')->references('id')->onDelete('Cascade')->onUpdate('Cascade');
             $table->timestamps();
         });
     }

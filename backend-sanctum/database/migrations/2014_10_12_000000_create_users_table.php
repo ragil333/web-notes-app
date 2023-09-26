@@ -15,7 +15,8 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('email')->unique();
-            $table->uuid('id_role')->references('user_role')->on('id');
+            $table->uuid('id_role');
+            $table->foreign('id_role')->on('user_role')->references('id')->onDelete('Cascade')->onUpdate('Cascade');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
