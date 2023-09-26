@@ -22,10 +22,12 @@
                 <i class="las la-clipboard font-size-20 mr-1"></i>
                 <span class="mt-2">Your Notes</span>
             </a>
-            <a class="dropdown-item mb-2" href="{{ route('user') }}">
-                <i class="las la-user font-size-20 mr-1"></i>
-                <span class="mt-2">User</span>
-            </a>
+            @if (Session::get('user')['role']['kode_role'] == 1)
+                <a class="dropdown-item mb-2" href="{{ route('user') }}">
+                    <i class="las la-user font-size-20 mr-1"></i>
+                    <span class="mt-2">User</span>
+                </a>
+            @endif
             <hr class="my-2">
             <a class="dropdown-item" href="{{ route('logout') }}">
                 <i class="las la-sign-out-alt font-size-20 mr-1"></i>

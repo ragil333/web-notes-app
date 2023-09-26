@@ -92,9 +92,11 @@
                                                             <div class="card-footer">
                                                                 <div
                                                                     class="d-flex align-items-center justify-content-between note-text note-text-danger">
-                                                                    <a href="#" class=""><i
-                                                                            class="las la-user mr-2 font-size-20"></i>
-                                                                        {{ $d['user']['email'] }}</a>
+                                                                    @if (Session::get('user')['role']['kode_role'] == 1)
+                                                                        <a href="#" class=""><i
+                                                                                class="las la-user mr-2 font-size-20"></i>
+                                                                            {{ $d['user']['email'] }}</a>
+                                                                    @endif
                                                                     <a href="#" class=""><i
                                                                             class="las la-calendar mr-2 font-size-20"></i>
                                                                         {{ \Carbon\Carbon::parse($d['created_at'])->translatedFormat('d F Y') }}</a>
