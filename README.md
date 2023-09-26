@@ -374,7 +374,7 @@ git clone https://github.com/ragil333/web-notes-app.git
 
 # Database
 ```
-mysql -u root -p toor
+mysql -u root
 create database note_app;
 ```
 
@@ -420,3 +420,43 @@ menjalankan api backend-sanctum
 php artisan serve --port 8000
 ```
 
+
+# FRONT END WEBSITE
+
+masuk ke prject frontend
+```sh
+cd front-end
+```
+ganti nama env.example menjadi .env
+ ```
+ mv env.example .env
+ ```
+
+ # FEATURES
+ > Custom middleware login sebagai admin untuk mengakses data user dan melihat semua notes
+ > Custom middleware AuthenticateApi. berfungsi agar website hanya dapat diakses ketika sudah login dan terautentikasi dengan api
+ > data user yang terautentikasi akan disimpan dalam session
+ > Custom middleware AuthenticateGuest, berfungsi pada halaman login dan register
+ > halaman login dan register hanya dapat diakses ketika tidak ada session
+ > logout akan menghapus semua session website dan melakukan revoking token melewati api call
+ > user logout akan redirect kehalaman login
+ > semua input validasi terkoneksi dengan validasi yang ada pada api,
+ > semua validation error message berasalah dari api
+ > menampilkan alert success atau error ketika melakukan api call. seperti untuuk login dan register
+ > menggunakan blade templating layout, @extend, @include, @yield, @section()
+ > table user menggunakan datatables
+ > karena menggunakan datatablse maka sudah terdapat fitur searh dan pagination
+ > Responsive
+ > saat menjalankan web front end pastilan API_URI sesuai dengan url api backend
+ 
+ ```
+    API_URI=127.0.0.1:8000/api/
+ ```
+ 
+ menjalankan front end website
+ ```
+ php artisan serve --port 8001
+ ```
+ 
+ 
+ 
