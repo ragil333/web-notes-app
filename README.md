@@ -400,6 +400,10 @@ DB_USERNAME=root
 DB_PASSWORD=toor
 ```
 
+download dependecies
+```
+composer insall
+```
 migrasi database laravel
 ```
 php artisan migrate
@@ -431,6 +435,10 @@ ganti nama env.example menjadi .env
  ```
  mv env.example .env
  ```
+download dependecies
+```
+composer insall
+```
 
  # FEATURES
  > Custom middleware login sebagai admin untuk mengakses data user dan melihat semua notes
